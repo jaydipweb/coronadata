@@ -12,7 +12,9 @@
                $id= $data['id'];
                $from ='rockystar10.11@gmail.com';
                $to = $email;
-               $link = 'http://localhost/Test_php/reset-password.php?id='.$id;
+               $hash = sha1('DB_SALT'.$id);
+               $hashId = $hash.'_'.$id;
+               $link = 'http://localhost/Test_php/reset-password.php?id='.$hashId;
                $subject = 'Reset Password Link';
                $headers = "From:".$from;
                $headers .= "MIME-Version: 1.0\r\n";
@@ -32,17 +34,31 @@
             }
          }
    }else{
-        $id = $_POST['id'];
-        $password = $_POST['password'];
-        $sql = "UPDATE registration SET password='$password' WHERE id='$id'";
-        if (mysqli_query($conn, $sql)) {
-         $msg = "change your password successfully please logn here";
-         echo $msg;
-       } else {
-         $msg = 'error';
-         echo $msg;
-       }
-
+         if(!empty($_POST['id'])){
+               $hash = $_POST['id'];
+               $splitToken = explode('_', $hash);
+               if (count($splitToken) != 2) {
+                  return false;
+               }
+               list($_, $id) = $splitToken;
+               if (sha1('DB_SALT'.$id).'_'.$id != $hash) {
+                  $msg = 'error';
+                  echo $msg;
+               } else {
+                  $password = $_POST['password'];
+                  $sql = "UPDATE registration SET password='$password' WHERE id='$id'";
+                  if (mysqli_query($conn, $sql)) {
+                     $msg = "change your password successfully please logn here";
+                     echo $msg;
+                  } else {
+                     $msg = 'error';
+                     echo $msg;
+                  }
+               }
+         }else{
+            $msg = 'error';
+            echo $msg;
+         }      
    }
    mysqli_close($conn);
 ?>

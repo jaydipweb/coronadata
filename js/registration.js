@@ -86,17 +86,17 @@ $(document).on("keyup", "#password", function(){
 $(document).on("focusin", "#confirmpassword", function(){
     $("#passmsg").empty();
 });
-$(document).on("focusout", "#confirmpassword", function(){
-    var password = $("#password").val();
-    var confirmpassword = $("#confirmpassword").val();
-    if(password.length != 0){
-        if(password != confirmpassword){
-            $('#passmsg').html("<span style='color:red;'>Your password is not match.</span>");
-        }else{
-            $('#passmsg').html("<span style='color:green;'>Your password is match.</span>");
-        }
-    }
-});
+// $(document).on("focusout", "#confirmpassword", function(){
+//     var password = $("#password").val();
+//     var confirmpassword = $("#confirmpassword").val();
+//     if(password.length != 0){
+//         if(password != confirmpassword){
+//             $('#passmsg').html("<span style='color:red;'>Your password is not match.</span>");
+//         }else{
+//             $('#passmsg').html("<span style='color:green;'>Your password is match.</span>");
+//         }
+//     }
+// });
 $(document).ready(function(){
     $("#registration_form").submit(function( event ){
         event.preventDefault();

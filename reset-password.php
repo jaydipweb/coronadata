@@ -1,5 +1,9 @@
 <?php
-$id= $_GET['id'];
+if(isset($_GET['id'])){
+    $id= $_GET['id'];
+}else{
+    $id='';
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
