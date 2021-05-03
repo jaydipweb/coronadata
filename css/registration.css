@@ -34,6 +34,7 @@
     width: calc((100% - 60px) / 2);
   }
   
+  
   @media (max-width: 767px) {
     .col-2 {
       width: 100%;
@@ -458,6 +459,11 @@
       padding-top: 40px;
       padding-bottom: 40px;
     }
+    
+    .form-box{
+      padding-left: 20px;
+      padding-right: 20px;
+    }
   }
 
   @media only screen and (max-width: 600px) {
@@ -468,6 +474,11 @@
     .card-1 .card-heading {
       background: url("../images/corona-virus-img-mobile.png") center center/cover no-repeat;
       padding-top: 210px;
+    }
+
+    .form-box{
+      padding-left: 20px;
+      padding-right: 20px;
     }
 }
   

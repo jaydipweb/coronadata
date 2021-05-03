@@ -12,7 +12,7 @@ $id= $_GET['id'];
     <meta name="keywords" content="Colorlib Templates">
 
     <!-- Title Page-->
-    <title>Au Register Forms by Colorlib</title>
+    <title>Reset Password</title>
 
     <!-- Icons font CSS-->
     <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
@@ -37,7 +37,7 @@ $id= $_GET['id'];
 </head>
 
 <body>
-    <div class="page-wrapper p-t-100 p-b-100 font-robo">
+    <div class="page-wrapper p-t-100 p-b-100 font-robo form-box">
         <div class="wrapper wrapper--w680">
             <div class="card card-1">
                 <div class="card-heading"></div>
