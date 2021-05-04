@@ -13,7 +13,7 @@ $(document).ready(function(){
                     $("#msg").html(msg);
                     $("#login_form").find("input[type=password], input[type=email]").val("");
                 }else{
-                    location.href = 'registration-form.php';
+                    location.href = 'index.php';
                 }  
             }
         });

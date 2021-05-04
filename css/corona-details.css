@@ -1,0 +1,36 @@
+body{
+}
+
+.box{
+    height:200px;
+    width:270px;
+    border: solid grey 1px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-radius: 5px;
+    margin:10px;
+    text-align:center;
+}
+
+.box h3{
+    margin-top:15%;
+}
+
+.box h4{
+    margin-top:17%;
+}
+
+h2{
+    text-align:center;
+    margin-bottom:3%;
+}
+
+hr{
+    border-top: 2px solid #bfbfbf;
+    margin-top: 1px;
+}
+
+@media (max-width: 767px) {
+    .box {
+        margin: 5% auto;
+    }
+}
