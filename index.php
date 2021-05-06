@@ -17,6 +17,9 @@
         <title>Corona Update</title>
     </head>
     <body>
+        <div>
+            <button class="btn btn-info logout">Log Out</button>
+        </div><br><br>
         <div class="container" style="margin-top:5%;">
             <h2>India Total Corona Case</h2><hr>
             <div class="row">
@@ -38,12 +41,12 @@
                 </div>
             </div><br><br>
             <h2>State wise Corona Case</h2><hr>
-            <table class="table table-hover" id="corona-details">
+            <table class="table" id="corona-details" style="width:100%">
                 <thead>
                     <tr>
                         <th scope="col">#</th>
                         <th scope="col">State</th>
-                        <th scope="col">Confirmed Cases</th>
+                        <th scope="col">Cases</th>
                         <th scope="col">Discharged</th>
                         <th scope="col">Deaths</th>
                     </tr>
@@ -63,8 +66,19 @@
         </div>
         <script>
             $(document).ready( function (){
-                $('#corona-details').DataTable();
+                $('#corona-details').DataTable({
+                    scrollX: true, 
+                });
             });
+            $(".logout").click(function(){
+                $.ajax({
+                    url: 'logout.php',
+                    type: 'POST',
+                    success: function(msg){
+                        location.href = 'login.php';
+                    }
+                });
+            });   
         </script>
      </body>
 </html>

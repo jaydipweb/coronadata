@@ -1,10 +1,29 @@
 body{
+    background-image: url("../images/corona-details.jpg"); 
+    color:white;
+    opacity: 0.9;
+}
+
+table.dataTable tbody tr {
+    background-color: inherit;
+}
+
+label {
+    color: white !important;
+}
+
+#corona-details_info{
+    color:white;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    color:white !important;
 }
 
 .box{
     height:200px;
     width:270px;
-    border: solid grey 1px;
+    border: solid white 1px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     border-radius: 5px;
     margin:10px;
@@ -29,8 +48,24 @@ hr{
     margin-top: 1px;
 }
 
+.logout{
+    float: right;
+    margin-top: 2%;
+    margin-right: 3%;
+}
+
+@media (min-width: 768px) and (max-width: 1024px){
+   .row{
+       margin-left: 10%;
+   }
+}
+
 @media (max-width: 767px) {
     .box {
         margin: 5% auto;
+    }
+
+    .logout{
+        margin-top: 5%;
     }
 }
